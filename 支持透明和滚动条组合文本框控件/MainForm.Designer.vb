@@ -22,7 +22,6 @@ Partial Class MainForm
     '不要使用代码编辑器修改它。
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.LabelPanel = New System.Windows.Forms.Label()
         Me.LabelScrollBar = New System.Windows.Forms.Label()
         Me.LabelTextBox = New System.Windows.Forms.Label()
@@ -44,10 +43,10 @@ Partial Class MainForm
         Me.LabelScrollBar.BackColor = System.Drawing.Color.Transparent
         Me.LabelScrollBar.Font = New System.Drawing.Font("微软雅黑", 10.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(134, Byte))
         Me.LabelScrollBar.ForeColor = System.Drawing.Color.White
-        Me.LabelScrollBar.Image = CType(resources.GetObject("LabelScrollBar.Image"), System.Drawing.Image)
+        Me.LabelScrollBar.Image = Global.支持透明和滚动条组合文本框控件.My.Resources.UnityResource.ScrollBar
         Me.LabelScrollBar.Location = New System.Drawing.Point(565, 51)
         Me.LabelScrollBar.Name = "LabelScrollBar"
-        Me.LabelScrollBar.Size = New System.Drawing.Size(20, 36)
+        Me.LabelScrollBar.Size = New System.Drawing.Size(32, 72)
         Me.LabelScrollBar.TabIndex = 3
         Me.LabelScrollBar.Visible = False
         '

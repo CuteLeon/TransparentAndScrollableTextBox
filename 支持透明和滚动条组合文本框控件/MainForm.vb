@@ -6,7 +6,7 @@
         LabelTextBox.Location = Point.Empty
         LabelScrollBar.Location = New Point(LabelPanel.Width - LabelScrollBar.Width, 0)
 
-        For index As Integer = 0 To 10
+        For index As Integer = 0 To 30
             LabelTextBox.Text &= index & vbCrLf
         Next
     End Sub
