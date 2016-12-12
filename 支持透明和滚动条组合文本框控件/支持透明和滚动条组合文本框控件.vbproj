@@ -72,6 +72,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LeonTextBox.Designer.vb">
+      <DependentUpon>LeonTextBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LeonTextBox.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -101,6 +107,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="LeonTextBox.resx">
+      <DependentUpon>LeonTextBox.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
