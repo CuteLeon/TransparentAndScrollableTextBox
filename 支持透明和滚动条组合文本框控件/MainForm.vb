@@ -42,6 +42,25 @@
         End If
     End Sub
 
+    Private Sub LabelTextBox_MouseDown(sender As Object, e As MouseEventArgs) Handles LabelTextBox.MouseDown, LabelPanel.MouseDown
+        LabelPanel.Tag = MousePosition.Y : LabelTextBox.Tag = LabelTextBox.Top
+        AddHandler LabelTextBox.MouseMove, AddressOf LabelTextBox_MouseMove
+        AddHandler LabelPanel.MouseMove, AddressOf LabelTextBox_MouseMove
+    End Sub
+
+    Private Sub LabelTextBox_MouseMove(sender As Object, e As MouseEventArgs)
+        If LabelTextBox.Height <= LabelPanel.Height Then Exit Sub
+        Dim TopPosition As Integer = MousePosition.Y - LabelPanel.Tag
+        If TopPosition > -LabelTextBox.Tag Or LabelTextBox.Tag + TopPosition < LabelPanel.Height - LabelTextBox.Height Then Exit Sub
+        LabelTextBox.Top = LabelTextBox.Tag + TopPosition
+        LabelScrollBar.Top = -LabelTextBox.Top * (LabelPanel.Height - LabelScrollBar.Height) / (LabelTextBox.Height - LabelPanel.Height)
+    End Sub
+
+    Private Sub LabelTextBox_MouseUp(sender As Object, e As MouseEventArgs) Handles LabelTextBox.MouseUp, LabelPanel.MouseUp
+        RemoveHandler LabelTextBox.MouseMove, AddressOf LabelTextBox_MouseMove
+        RemoveHandler LabelPanel.MouseMove, AddressOf LabelTextBox_MouseMove
+    End Sub
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         LabelTextBox.Text = TextBox1.Text
     End Sub
